@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-        <context:component-scan base-package="ru.niatomi.MusicPlayer.models"/>
+<!--        <context:component-scan base-package="ru.niatomi.MusicPlayer.beans"/>-->
 
 <!--&lt;!&ndash;    Music Player bean configuration &ndash;&gt;-->
 <!--        <bean id="classicalMusic"-->
