@@ -1,7 +1,5 @@
-package ru.niatomi.MusicPlayer.models;
+package ru.niatomi.MusicPlayer.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
