@@ -1,37 +1,23 @@
 package ru.niatomi.MusicPlayer;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContextExtensionsKt;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.niatomi.MusicPlayer.models.Music;
-import ru.niatomi.MusicPlayer.models.RockMusic;
-import ru.niatomi.MusicPlayer.player.MusicPlayer;
-
-import java.util.ArrayList;
-import java.util.List;
+import ru.niatomi.MusicPlayer.beans.ClassicalMusic;
+import ru.niatomi.MusicPlayer.beans.Computer;
+import ru.niatomi.MusicPlayer.beans.Music;
+import ru.niatomi.MusicPlayer.beans.MusicPlayer;
 
 /**
  * @author niatomi
  */
 public class App {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+                "ru.niatomi.MusicPlayer.beans"
         );
 
-        Music music = context.getBean("rockMusic", Music.class);
+        Computer computer = context.getBean(Computer.class);
 
-        MusicPlayer musicPlayer = new MusicPlayer(music);
-
-        musicPlayer.playMusic();
-
-        Music music2 = context.getBean("rockMusic", Music.class);
-
-        MusicPlayer classicalMusicPlayer = new MusicPlayer(music2);
-
-        classicalMusicPlayer.playMusic();
-
-        System.out.println(music == music2);
+        System.out.println(computer.toString());
 
         context.close();
 
