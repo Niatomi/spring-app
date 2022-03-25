@@ -7,40 +7,42 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+        <context:component-scan base-package="ru.niatomi.MusicPlayer.models"/>
 
-        <context:property-placeholder location="classpath:musicPlayer.properties"/>
+<!--&lt;!&ndash;    Music Player bean configuration &ndash;&gt;-->
+<!--        <bean id="classicalMusic"-->
+<!--              class="ru.niatomi.MusicPlayerXML.models.ClassicalMusic"-->
+<!--              factory-method="getClassicalMusic">-->
+<!--        </bean>-->
 
-<!--    Music Player bean configuration-->
-        <bean id="classicalMusicBean"
-              class="ru.niatomi.musicPlayer.models.ClassicalMusic">
-        </bean>
+<!--        <bean id="rockMusic"-->
+<!--              class="ru.niatomi.MusicPlayerXML.models.RockMusic">-->
+<!--        </bean>-->
 
-        <bean id="rockMusicBean"
-              class="ru.niatomi.musicPlayer.models.RockMusic">
-        </bean>
+<!--        <bean id="jazzMusic"-->
+<!--              class="ru.niatomi.MusicPlayerXML.models.JazzMusic">-->
+<!--        </bean>-->
 
-        <bean id="jazzMusicBean"
-              class="ru.niatomi.musicPlayer.models.JazzMusic">
-        </bean>
+<!--        <bean id="musicList" class="java.util.ArrayList">-->
+<!--                <constructor-arg>-->
+<!--                        <list>-->
+<!--                                <ref bean="classicalMusic" />-->
+<!--                                <ref bean="rockMusic" />-->
+<!--                                <ref bean="jazzMusic" />-->
+<!--                        </list>-->
+<!--                </constructor-arg>-->
+<!--        </bean>-->
 
-        <bean id="musicList" class="java.util.ArrayList">
-                <constructor-arg>
-                        <list>
-                                <ref bean="classicalMusicBean" />
-                                <ref bean="rockMusicBean" />
-                                <ref bean="jazzMusicBean" />
-                        </list>
-                </constructor-arg>
-        </bean>
+<!--        <bean id="musicPlayer"-->
+<!--              class="ru.niatomi.MusicPlayerXML.player.MusicPlayer"-->
+<!--              scope="prototype"-->
+<!--              init-method="doMyInit"-->
+<!--              destroy-method="doMyDestroy">-->
+<!--                <property name="name" value="${musicPlayer.name}"/>-->
+<!--                <property name="volume" value="${musicPlayer.volume}"/>-->
 
-        <bean id="musicPlayer"
-              class="ru.niatomi.musicPlayer.player.MusicPlayer"
-              scope="prototype">
-                <property name="name" value="${musicPlayer.name}"/>
-                <property name="volume" value="${musicPlayer.volume}"/>
+<!--                <property name="musicList" ref="musicList"/>-->
 
-                <property name="musicList" ref="musicList"/>
-
-        </bean>
+<!--        </bean>-->
 
 </beans>
