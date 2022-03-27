@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import static ru.niatomi.MusicPlayer.beans.Genre.*;
+
 /**
  * @author niatomi
  */
@@ -23,6 +25,9 @@ public class Computer {
 
     @Override
     public String toString() {
-        return "Computer " + id + " " + musicPlayer.playMusic();
+        return "Computer{" +
+                "id=" + id +
+                ", musicPlayer=" + musicPlayer.playMusic(CLASSICAL) +
+                '}';
     }
 }
