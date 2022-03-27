@@ -6,6 +6,10 @@ import ru.niatomi.MusicPlayer.beans.Computer;
 import ru.niatomi.MusicPlayer.beans.Music;
 import ru.niatomi.MusicPlayer.beans.MusicPlayer;
 
+import java.util.Random;
+
+import static ru.niatomi.MusicPlayer.beans.Genre.*;
+
 /**
  * @author niatomi
  */
@@ -15,9 +19,9 @@ public class App {
                 "ru.niatomi.MusicPlayer.beans"
         );
 
-        Computer computer = context.getBean(Computer.class);
+        MusicPlayer musicPlayer = context.getBean(MusicPlayer.class);
 
-        System.out.println(computer.toString());
+        System.out.println(musicPlayer.playMusic(ROCK));
 
         context.close();
 
