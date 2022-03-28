@@ -1,7 +1,10 @@
 package ru.niatomi.MusicPlayer.beans;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +12,6 @@ import java.util.List;
 /**
  * @author niatomi
  */
-@Component
 public class ClassicalMusic implements Music {
     List<String> songList = Arrays.asList(
             "Hungary Rhapsody",

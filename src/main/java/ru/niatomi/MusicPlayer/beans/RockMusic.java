@@ -9,7 +9,6 @@ import java.util.List;
 /**
  * @author niatomi
  */
-@Component
 @NoArgsConstructor
 public class RockMusic implements Music {
     List<String> songList = Arrays.asList(
