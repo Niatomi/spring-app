@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+
 <!--        <context:component-scan base-package="ru.niatomi.MusicPlayer.beans"/>-->
 
 <!--&lt;!&ndash;    Music Player bean configuration &ndash;&gt;-->
