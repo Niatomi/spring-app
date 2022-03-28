@@ -1,10 +1,7 @@
 package ru.niatomi.MusicPlayer;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.niatomi.MusicPlayer.beans.ClassicalMusic;
-import ru.niatomi.MusicPlayer.beans.Computer;
-import ru.niatomi.MusicPlayer.beans.Music;
-import ru.niatomi.MusicPlayer.beans.MusicPlayer;
+import ru.niatomi.MusicPlayer.beans.*;
 
 import java.util.Random;
 
@@ -16,12 +13,12 @@ import static ru.niatomi.MusicPlayer.beans.Genre.*;
 public class App {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-                "ru.niatomi.MusicPlayer.beans"
+                SpringConfig.class
         );
 
         MusicPlayer musicPlayer = context.getBean(MusicPlayer.class);
 
-        System.out.println(musicPlayer.playMusic(ROCK));
+        musicPlayer.playMusic();
 
         context.close();
 
