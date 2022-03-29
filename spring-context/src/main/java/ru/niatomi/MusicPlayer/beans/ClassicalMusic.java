@@ -1,20 +1,16 @@
 package ru.niatomi.MusicPlayer.beans;
 
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * @author niatomi
  */
-@NoArgsConstructor
-public class RockMusic implements Music {
+public class ClassicalMusic implements Music {
     List<String> songList = Arrays.asList(
-            "It's only smiles",
-            "Marigold",
-            "Reptile");
+            "Hungary Rhapsody",
+            "Cannon in D",
+            "Four seasons");
 
     @Override
     public List<String> getSongs() {

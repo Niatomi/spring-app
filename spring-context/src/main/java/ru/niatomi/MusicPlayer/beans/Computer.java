@@ -1,11 +1,6 @@
 package ru.niatomi.MusicPlayer.beans;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import static ru.niatomi.MusicPlayer.beans.Genre.*;
 
 /**
  * @author niatomi

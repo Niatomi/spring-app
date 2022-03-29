@@ -1,11 +1,8 @@
 package ru.niatomi.MusicPlayer;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import ru.niatomi.MusicPlayer.beans.*;
-
-import java.util.Random;
-
-import static ru.niatomi.MusicPlayer.beans.Genre.*;
+import ru.niatomi.MusicPlayer.beans.MusicPlayer;
+import ru.niatomi.MusicPlayer.beans.SpringConfig;
 
 /**
  * @author niatomi
