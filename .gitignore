@@ -43,3 +43,5 @@ HELP.md
 /spring-context/target/
 /springMVC/target/
 /springMVCXML/target/
+/spring-mvc-app/target/
+/spring-mvc-xml-app/target/
