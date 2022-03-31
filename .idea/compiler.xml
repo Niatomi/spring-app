@@ -7,10 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springMVС" />
+        <module name="spring-mvc-xml-app" />
         <module name="spring-context" />
-        <module name="springMVC" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-mvc-app (1)" target="8" />
+      <module name="springMVC" target="8" />
+      <module name="springMVС" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
