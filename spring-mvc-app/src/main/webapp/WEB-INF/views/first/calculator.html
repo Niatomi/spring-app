@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>URL calculator</title>
+    <style>
+        body{
+            background-color: #121212; /* Цвет фона веб-страницы */
+        }
+        p, h2, h3, a {
+            color: white; /* Цвет текста */
+        }
+    </style>
 </head>
 <body>
     <h3>Send your math to url</h3>
-    <p th:text="${answer}"></p>
+
+    <table>
+        <tbody>
+        <tr>
+            <td><p>Answer: </p></td>
+            <td><p th:text="${answer}"></p></td>
+        </tr>
+        </tbody>
+    </table>
+
+
     <p>a = integer</p>
     <p>b = integer</p>
     <p>action = {multiplication, addition, subtraction, division}</p>
