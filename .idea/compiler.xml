@@ -14,6 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-mvc-app (1)" target="8" />
+      <module name="spring-mvc-xml-app" target="8" />
       <module name="springMVC" target="8" />
       <module name="springMVС" target="8" />
     </bytecodeTargetLevel>
