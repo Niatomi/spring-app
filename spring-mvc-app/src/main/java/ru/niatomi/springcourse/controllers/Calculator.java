@@ -19,7 +19,9 @@ public class Calculator {
                              @RequestParam(value = "action", required = false) String action,
                              Model model) {
 
-        if (action.equals("multiplication")) {
+        if (action == null) {
+            model.addAttribute("answer", "You didn't wrote your action");
+        } else if (action.equals("multiplication")) {
             model.addAttribute("answer", a * b);
         } else if (action.equals("addition")) {
             model.addAttribute("answer", a + b);
