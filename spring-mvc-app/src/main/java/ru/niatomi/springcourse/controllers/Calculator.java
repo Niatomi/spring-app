@@ -22,13 +22,14 @@ public class Calculator {
         if (action == null) {
             model.addAttribute("answer", "You didn't wrote your action");
         } else if (action.equals("multiplication")) {
-            model.addAttribute("answer", a * b);
+            double answer = a * b;
+            model.addAttribute("answer", a *(double) b);
         } else if (action.equals("addition")) {
             model.addAttribute("answer", a + b);
         } else if (action.equals("subtraction")) {
             model.addAttribute("answer", a - b);
         } else if (action.equals("division")) {
-            model.addAttribute("answer", a / b);
+            model.addAttribute("answer", a /(double) b);
         } else {
             model.addAttribute("answer", "There is no any actions like " + action);
         }
