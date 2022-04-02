@@ -18,21 +18,19 @@ public class Calculator {
                              @RequestParam(value = "b", required = false) Integer b,
                              @RequestParam(value = "action", required = false) String action,
                              Model model) {
-        Integer answer = 0;
-        if (action == "multiplication") {
-            answer = a * b;
-            model.addAttribute("answer", answer);
-        } else if (action == "addition") {
-            System.out.println("You in logic");
-            answer = a + b;
-            model.addAttribute("answer", answer);
-        } else if (action == "subtraction") {
-            answer = a - b;
-            model.addAttribute("answer", answer);
-        } else if (action == "division") {
-            answer = a / b;
-            model.addAttribute("answer", answer);
+
+        if (action.equals("multiplication")) {
+            model.addAttribute("answer", a * b);
+        } else if (action.equals("addition")) {
+            model.addAttribute("answer", a + b);
+        } else if (action.equals("subtraction")) {
+            model.addAttribute("answer", a - b);
+        } else if (action.equals("division")) {
+            model.addAttribute("answer", a / b);
+        } else {
+            model.addAttribute("answer", "There is no any actions like " + action);
         }
+
         return "first/calculator";
     }
 
