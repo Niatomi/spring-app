@@ -35,4 +35,9 @@ public class PersonDAO {
                      .filter(person -> person.getId() == id)
                      .findAny().orElse(null);
     }
+
+    public void savePerson(Person person) {
+        person.setId(++PEOPLE_COUNT);
+        people.add(person);
+    }
 }
