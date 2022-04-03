@@ -3,10 +3,9 @@ package ru.niatomi.crudApp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.niatomi.crudApp.dao.PersonDAO;
+import ru.niatomi.crudApp.models.Person;
 
 /**
  * @author niatomi
@@ -33,5 +32,16 @@ public class People {
                              Model model) {
         model.addAttribute("person", personDAO.showPerson(id));
         return "people/person";
+    }
+
+    @GetMapping("/newPerson")
+    public String createNewPerson(@ModelAttribute("person") Person person) {
+        return "people/newPerson";
+    }
+
+    @PostMapping()
+    public String addNewPersonToDB(@ModelAttribute("person") Person person) {
+        personDAO.savePerson(person);
+        return "redirect:people/";
     }
 }
