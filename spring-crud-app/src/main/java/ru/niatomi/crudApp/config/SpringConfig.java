@@ -16,7 +16,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
  * @author niatomi
  */
 @Configuration
-@ComponentScan("ru.niatomi.crud-app")
+@ComponentScan("ru.niatomi.crudApp")
 @EnableWebMvc
 public class SpringConfig implements WebMvcConfigurer {
 
