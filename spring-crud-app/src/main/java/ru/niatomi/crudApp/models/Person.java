@@ -1,4 +1,4 @@
-package ru.niatomi.crudApp.model;
+package ru.niatomi.crudApp.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
