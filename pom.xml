@@ -9,7 +9,9 @@
   <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-context</module>
-      <module>springMVC</module>
+        <module>spring-mvc-app</module>
+        <module>spring-crud-app</module>
+        <module>spring-mvc-xml-app</module>
     </modules>
     <packaging>pom</packaging>
 
