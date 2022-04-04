@@ -10,11 +10,13 @@
         <module name="spring-crud-app" />
         <module name="spring-mvc-app" />
         <module name="spring-mvc-xml-app" />
+        <module name="spring-forms-validation" />
         <module name="spring-context" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-mvc-app (1)" target="8" />
+      <module name="spring-mvc-xml-app" target="8" />
       <module name="springMVC" target="8" />
       <module name="springMVС" target="8" />
     </bytecodeTargetLevel>
