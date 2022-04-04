@@ -46,3 +46,5 @@ HELP.md
 /spring-mvc-app/target/
 /spring-mvc-xml-app/target/
 /spring-crud-app/target/
+/spring-forms-validation/target/
+/spring-forms-validation/target/classes/
