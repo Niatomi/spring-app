@@ -3,12 +3,9 @@ package ru.niatomi.crudApp.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.niatomi.crudApp.dao.PersonDAO;
 import ru.niatomi.crudApp.models.Person;
-
-import javax.validation.Valid;
 
 /**
  * @author niatomi
@@ -38,18 +35,12 @@ public class People {
     }
 
     @GetMapping("/newPerson")
-    public String createNewPerson(@ModelAttribute("person")
-                                  @Valid Person person) {
+    public String createNewPerson(@ModelAttribute("person") Person person) {
         return "people/newPerson";
     }
 
     @PostMapping()
-    public String addNewPersonToDB(@ModelAttribute("person") @Valid Person person,
-                                    BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) return "people/newPerson"
-                ;
-
+    public String addNewPersonToDB(@ModelAttribute("person") Person person) {
         personDAO.savePerson(person);
         return "redirect:people/";
     }
@@ -61,13 +52,7 @@ public class People {
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("person") @Valid Person person,
-                         BindingResult bindingResult,
-                         @PathVariable("id") int id) {
-
-        if (bindingResult.hasErrors()) return "people/edit"
-                ;
-
+    public String update(@ModelAttribute("person") Person person, @PathVariable("id") int id) {
         personDAO.changePerson(id, person);
         return "redirect:/people";
     }
