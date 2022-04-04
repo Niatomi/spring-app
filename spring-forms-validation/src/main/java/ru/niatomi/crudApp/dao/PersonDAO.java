@@ -42,6 +42,8 @@ public class PersonDAO {
     public void changePerson(int id, Person updatedPerson) {
         Person updatingPerson = showPerson(id);
         updatingPerson.setName(updatedPerson.getName());
+        updatingPerson.setEmail(updatedPerson.getEmail());
+        updatingPerson.setAge(updatedPerson.getAge());
     }
 
     public void deletePerson(int id) {

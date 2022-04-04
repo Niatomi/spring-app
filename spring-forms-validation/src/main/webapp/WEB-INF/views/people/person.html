@@ -6,8 +6,23 @@
     <title>Person</title>
 </head>
 <body>
-    <p th:text="${person.getName()}">VALUE</p>
-    <p th:text="${person.getId()}">VALUE</p>
+
+    <table>
+        <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td><p th:text="${person.getId()}">VALUE</p></td>
+            <td><p th:text="${person.getName()}">VALUE</p></td>
+            <td><p th:text="${person.getAge()}">VALUE</p></td>
+            <td><p th:text="${person.getEmail()}">VALUE</p></td>
+        </tr>
+        </tbody>
+    </table>
 
     <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
 
