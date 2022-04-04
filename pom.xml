@@ -11,7 +11,7 @@
         <module>spring-context</module>
         <module>spring-mvc-app</module>
         <module>spring-crud-app</module>
-        <module>spring-mvc-xml-app</module>
+        <module>spring-mvc-app-xml</module>
     </modules>
     <packaging>pom</packaging>
 
