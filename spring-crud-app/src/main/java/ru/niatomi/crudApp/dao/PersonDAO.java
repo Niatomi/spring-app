@@ -40,4 +40,9 @@ public class PersonDAO {
         person.setId(++PEOPLE_COUNT);
         people.add(person);
     }
+
+    public void changePerson(int id, Person updatedPerson) {
+        Person updatingPerson = showPerson(id);
+        updatingPerson.setName(updatedPerson.getName());
+    }
 }
