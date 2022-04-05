@@ -30,9 +30,13 @@ public class PersonDAO {
 
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
+    }
+
+    private Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 
     public List<Person> showPeople() {
@@ -56,12 +60,6 @@ public class PersonDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return people;
     }
@@ -74,6 +72,7 @@ public class PersonDAO {
     }
 
     public void savePerson(Person person) {
+
         try {
             Statement statement = connection.createStatement();
             String SQL = "INSERT INTO Person VALUES(" + 1 + ",'" + person.getName() +
@@ -82,12 +81,6 @@ public class PersonDAO {
             statement.executeUpdate(SQL);
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
