@@ -50,7 +50,7 @@ public class People {
                 ;
 
         personDAO.savePerson(person);
-        return "redirect:people/";
+        return "redirect:/people";
     }
 
     @GetMapping("/{id}/edit")
