@@ -42,10 +42,17 @@ public class PersonDAO {
     public List<Person> showPeople() {
         List<Person> people = new ArrayList<>();
 
+        Statement statement = null;
+        ResultSet resultSet = null;
+        Connection connection = null;
+
         try {
-            Statement statement = connection.createStatement();
+
+            connection = getConnection();
+
+            statement = connection.createStatement();
             String SQL = "SELECT * FROM Person";
-            ResultSet resultSet = statement.executeQuery(SQL);
+            resultSet = statement.executeQuery(SQL);
 
             while (resultSet.next()) {
                 Person person = new Person();
@@ -60,20 +67,34 @@ public class PersonDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (statement !=null) {
+                    statement.close();
+                }
+                if (connection!=null) {
+                    connection.close();
+                }
+                if (resultSet!=null){
+                    resultSet.close();
+                }
+            } catch (SQLException ex) {}
         }
         return people;
     }
 
     public Person showPerson(int id) {
         Person person = null;
-
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         try {
+            connection = getConnection();
             String SQL = "SELECT * FROM Person WHERE id=?";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setInt(1, id);
 
-            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
             resultSet.next();
 
@@ -85,16 +106,30 @@ public class PersonDAO {
             person.setEmail(resultSet.getString(4));
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (connection!=null) {
+                    connection.close();
+                }
+                if (resultSet!=null){
+                    resultSet.close();
+                }
+                if (preparedStatement!=null){
+                    preparedStatement.close();
+                }
+            } catch (SQLException ex) {}
         }
 
         return person;
     }
 
     public void savePerson(Person person) {
+        PreparedStatement preparedStatement = null;
 
         try {
+            connection = getConnection();
             String SQL = "INSERT INTO Person VALUES(1, ?, ?, ?)";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement = connection.prepareStatement(SQL);
 
             preparedStatement.setString(1, person.getName());
             preparedStatement.setInt(2, person.getAge());
@@ -103,13 +138,25 @@ public class PersonDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (connection!=null) {
+                    connection.close();
+                }
+                if (preparedStatement!=null){
+                    preparedStatement.close();
+                }
+            } catch (SQLException ex) {}
         }
     }
 
     public void changePerson(int id, Person updatedPerson) {
+        PreparedStatement preparedStatement = null;
+
         try {
+            connection = getConnection();
             String SQL = "UPDATE Person SET name=?,age=?, email=? WHERE id=?";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setString(1, updatedPerson.getName());
             preparedStatement.setInt(2, updatedPerson.getAge());
             preparedStatement.setString(3, updatedPerson.getEmail());
@@ -118,18 +165,38 @@ public class PersonDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (connection!=null) {
+                    connection.close();
+                }
+                if (preparedStatement!=null){
+                    preparedStatement.close();
+                }
+            } catch (SQLException ex) {}
         }
     }
 
     public void deletePerson(int id) {
+        PreparedStatement preparedStatement = null;
+
         try {
+            connection = getConnection();
             String SQL = "DELETE FROM Person WHERE id=?";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
+            preparedStatement = connection.prepareStatement(SQL);
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (connection!=null) {
+                    connection.close();
+                }
+                if (preparedStatement!=null){
+                    preparedStatement.close();
+                }
+            } catch (SQLException ex) {}
         }
-
     }
 }
