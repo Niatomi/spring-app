@@ -1,6 +1,5 @@
 package ru.niatomi.crudApp.dao;
 
-import lombok.Getter;
 import org.springframework.stereotype.Component;
 import ru.niatomi.crudApp.models.Person;
 
@@ -78,7 +77,9 @@ public class PersonDAO {
                 if (resultSet!=null){
                     resultSet.close();
                 }
-            } catch (SQLException ex) {}
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
         return people;
     }
@@ -117,7 +118,9 @@ public class PersonDAO {
                 if (preparedStatement!=null){
                     preparedStatement.close();
                 }
-            } catch (SQLException ex) {}
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
 
         return person;
@@ -146,7 +149,9 @@ public class PersonDAO {
                 if (preparedStatement!=null){
                     preparedStatement.close();
                 }
-            } catch (SQLException ex) {}
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
@@ -173,7 +178,9 @@ public class PersonDAO {
                 if (preparedStatement!=null){
                     preparedStatement.close();
                 }
-            } catch (SQLException ex) {}
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 
@@ -196,7 +203,9 @@ public class PersonDAO {
                 if (preparedStatement!=null){
                     preparedStatement.close();
                 }
-            } catch (SQLException ex) {}
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
