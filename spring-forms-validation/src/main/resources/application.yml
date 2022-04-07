@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+logging.level.org.springframework.web: DEBUG
+
+spring.ds_db1:
+  url: jdbc:postgresql://localhost:5432/first_db
+  username: postgres
+  password: admin
+  driverClassName: com.mysql.jdbc.Driver
