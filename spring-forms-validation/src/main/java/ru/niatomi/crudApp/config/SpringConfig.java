@@ -2,10 +2,7 @@ package ru.niatomi.crudApp.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.PropertyResolver;
 import org.springframework.core.env.PropertySourcesPropertyResolver;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -25,7 +22,11 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("ru.niatomi.crudApp")
 @EnableWebMvc
+@PropertySource("classpath:application.yml")
 public class SpringConfig implements WebMvcConfigurer {
+
+    @Autowired
+    Environment env;
 
     private final ApplicationContext applicationContext;
 
@@ -61,10 +62,10 @@ public class SpringConfig implements WebMvcConfigurer {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getRequiredProperty("spring.ds_db1.driverClassName"));
-        dataSource.setUrl("spring.ds_db1.url");
-        dataSource.setUsername("spring.ds_db1.username");
-        dataSource.setPassword("spring.ds_db1.url.password");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/first_db");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("admin");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
     }
 
