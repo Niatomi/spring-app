@@ -25,9 +25,6 @@ import javax.sql.DataSource;
 @PropertySource("classpath:application.yml")
 public class SpringConfig implements WebMvcConfigurer {
 
-    @Autowired
-    Environment env;
-
     private final ApplicationContext applicationContext;
 
     @Autowired
