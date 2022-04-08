@@ -22,7 +22,6 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("ru.niatomi.crudApp")
 @EnableWebMvc
-@PropertySource("classpath:application.yml")
 public class SpringConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
@@ -59,10 +58,12 @@ public class SpringConfig implements WebMvcConfigurer {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
+
+        dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/first_db");
         dataSource.setUsername("postgres");
         dataSource.setPassword("admin");
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+
         return dataSource;
     }
 
