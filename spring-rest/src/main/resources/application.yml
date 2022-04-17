@@ -1,0 +1,13 @@
+#server:
+#  port: ${server_port:8080}
+#  servlet:
+#    context-path: /api
+#spring:
+#  profiles:
+#    active: prod
+#  jpa.hibernate.ddl-auto: update
+#  datasource:
+#    url: "mysql://${MYSQL_HOST:localhost}:3306/rest_database"
+#    username: root
+#    password: password
+#    driver-class-name: com.mysql.jdbc.Driver
