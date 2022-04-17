@@ -1,11 +1,12 @@
 package ru.niatomi.controller;
 
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.niatomi.entity.User;
-import ru.niatomi.repository.UserRepo;
+import ru.niatomi.entity.UserEntity;
+import ru.niatomi.exceptions.UserAlreadyExistsException;
+import ru.niatomi.exceptions.UserNotFoundException;
+import ru.niatomi.service.UserService;
 
 /**
  * @author niatomi
@@ -15,25 +16,37 @@ import ru.niatomi.repository.UserRepo;
 public class UserController {
 
     @Autowired
-    private UserRepo userRepo;
+    private UserService service;
 
     @GetMapping()
-    public ResponseEntity getUsers() {
+    public ResponseEntity getOneUser(@RequestParam Long id) {
         try {
-            return ResponseEntity.ok("Server works");
+            return ResponseEntity.ok(service.getOneUser(id));
+        } catch (UserNotFoundException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error happened");
         }
     }
 
-    @PostMapping("/save")
-    public ResponseEntity registration(@RequestBody User user) {
+    @PostMapping("/signUp")
+    public ResponseEntity registration(@RequestBody UserEntity userEntity) {
         try {
-            if (userRepo.findByUsername(user.getUsername()) != null) {
-                return ResponseEntity.badRequest().body("User with name '" + user.getUsername() + "' already exists...");
-            }
-            userRepo.save(user);
+            service.registration(userEntity);
             return ResponseEntity.ok("User saved");
+        } catch (UserAlreadyExistsException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Error happened");
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteUser(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(service.deleteUser(id));
+        } catch (UserNotFoundException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Error happened");
         }
