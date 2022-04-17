@@ -10,6 +10,7 @@
         <module name="spring-crud-app" />
         <module name="spring-mvc-app" />
         <module name="spring-forms-validation" />
+        <module name="spring-esp8266-simple-controller" />
         <module name="spring-rest" />
         <module name="spring-context" />
       </profile>
