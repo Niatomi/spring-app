@@ -20,8 +20,6 @@ public class TodoEntity {
     private String title;
     private boolean completed;
 
-    private String description;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
