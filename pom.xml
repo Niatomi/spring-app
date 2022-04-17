@@ -13,6 +13,7 @@
         <module>spring-crud-app</module>
         <module>spring-mvc-app-xml</module>
         <module>spring-rest</module>
+        <module>spring-esp8266-simple-controller</module>
     </modules>
     <packaging>pom</packaging>
 
