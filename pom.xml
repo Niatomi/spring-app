@@ -12,6 +12,7 @@
         <module>spring-mvc-app</module>
         <module>spring-crud-app</module>
         <module>spring-mvc-app-xml</module>
+        <module>spring-rest</module>
     </modules>
     <packaging>pom</packaging>
 
