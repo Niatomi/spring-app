@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spring-crud-app" />
         <module name="spring-mvc-app" />
-        <module name="spring-rest-hello-world" />
         <module name="spring-forms-validation" />
+        <module name="spring-rest" />
         <module name="spring-context" />
       </profile>
     </annotationProcessing>
