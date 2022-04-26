@@ -7,5 +7,4 @@ import ru.niatomi.entity.TodoEntity;
  * @author niatomi
  */
 public interface TodoRepo extends CrudRepository<TodoEntity, Long> {
-
 }
