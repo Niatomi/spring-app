@@ -17,5 +17,4 @@ POST http://localhost:8080/person/52bb4831-1f5f-45e8-864d-43d6a188fef5/vaccinati
 POST http://localhost:8080/test-data
 
 ###
-
 GET http://localhost:8080/person/869b4367-5d8d-4458-8cdc-0b7d02196c83/generate-certificate
