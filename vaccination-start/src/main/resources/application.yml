@@ -1,0 +1,2 @@
+server:
+    port: ${server_port:8080}

@@ -1,0 +1,21 @@
+###
+POST http://localhost:8080/person?name=Olena
+
+###
+POST http://localhost:8080/person?name=Ivan
+
+###
+GET http://localhost:8080/persons
+
+###
+POST http://localhost:8080/person/5811664d-949a-48c5-9fe5-74f5c4ec6b1a/vaccination?date=2021-07-01
+
+###
+POST http://localhost:8080/person/52bb4831-1f5f-45e8-864d-43d6a188fef5/vaccination?date=2021-08-15
+
+###
+POST http://localhost:8080/test-data
+
+###
+
+GET http://localhost:8080/person/869b4367-5d8d-4458-8cdc-0b7d02196c83/generate-certificate
