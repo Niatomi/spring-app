@@ -40,7 +40,7 @@ public class VaccinationService {
 
     public String generateCertificate(UUID personId) {
         Person person = findPersonById(personId).orElseThrow(null);
-        if (person.getVaccinations().size() == 2) {
+        if (person.getVaccinations().size() >= 2) {
             if (person.isFullyVaccinated()) {
                 return String.format("Congratulation you got two hits of %s. Now you could travel", person.getVaccinations().get(0).getVaccine());
             } else {
