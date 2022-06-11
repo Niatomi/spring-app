@@ -13,6 +13,8 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/spring-esp8266-simple-controller/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-keylock/pom.xml" />
         <option value="$PROJECT_DIR$/spring-mvc-app-xml/pom.xml" />
       </set>
     </option>

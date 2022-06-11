@@ -1,12 +1,9 @@
-package ru.niatomi.controller;
+package ru.niatomi.controller.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import ru.niatomi.model.ActionsHistory;
 import ru.niatomi.service.ESPService;
 
 /**
@@ -14,7 +11,7 @@ import ru.niatomi.service.ESPService;
  */
 @RestController
 @RequestMapping("/esp")
-public class ESPController {
+public class ESPControllerImpl {
 
     @Autowired
     ESPService service;
@@ -28,8 +25,12 @@ public class ESPController {
         }
     }
 
-//    @PostMapping
-//    public void addToActions() {
-//
-//    }
+    @PostMapping
+    public void addActions(@RequestBody ActionsHistory actionsHistory) {
+        try {
+            service.addAction(actionsHistory);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
