@@ -12,3 +12,4 @@
     * В данном проекте есть [реализация](https://github.com/Niatomi/spring-app/blob/master/spring-mvc-app/src/main/java/ru/niatomi/springcourse/controllers/Calculator.java) простого URL калькулятора, открыть его можно по ссылке `http://localhost:8080/spring-mvc-app/first/calculator`;
 4. [Приложение с поддержкой CRUD;](https://github.com/Niatomi/spring-app/tree/master/spring-crud-app)
 5. [Приложение с валидацией форм и JDBC на JDBCTemplate;](https://github.com/Niatomi/spring-app/tree/master/spring-forms-validation)
+5. [HATEOAS на практике;](https://github.com/Niatomi/spring-app/tree/master/vaccination-start)
