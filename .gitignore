@@ -51,3 +51,6 @@ HELP.md
 /spring-mvc-app-xml/target/
 /spring-rest/target/
 /spring-esp8266-simple-controller/target/
+
+/GRPC/client/java-client-gRPC/target/
+/GRPC/server/java-gRPC/
