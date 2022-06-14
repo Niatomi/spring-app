@@ -10,6 +10,18 @@
         </processorPath>
         <module name="vaccination-start.main" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-crud-app" />
+        <module name="spring-forms-validation" />
+        <module name="spring-rest" />
+        <module name="java-client-gRPC" />
+        <module name="spring-mvc-app" />
+        <module name="java-gRPC" />
+        <module name="spring-context" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-keylock" target="8" />
