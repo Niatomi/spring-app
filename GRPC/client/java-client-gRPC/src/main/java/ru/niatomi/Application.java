@@ -1,8 +1,9 @@
 package ru.niatomi;
 
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
-import ru.niatomi.service.GreetingServiceImpl;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import ru.niatomi.grpc.GreetingServiceGrpc;
+import ru.niatomi.grpc.GreetingServiceOuterClass;
 
 import java.io.IOException;
 
@@ -11,15 +12,25 @@ import java.io.IOException;
  */
 public class Application {
     public static void main(String[] args) throws InterruptedException, IOException {
-        Server server = ServerBuilder
-                .forPort(8080)
-                .addService(new GreetingServiceImpl())
+        ManagedChannel channel = ManagedChannelBuilder
+                .forTarget("localhost:8080")
+                .usePlaintext()
                 .build();
 
-        server.start();
+        GreetingServiceGrpc.GreetingServiceBlockingStub stub = GreetingServiceGrpc
+                .newBlockingStub(channel);
 
-        System.out.println("Server started");
+        GreetingServiceOuterClass.HelloRequest request =
+                GreetingServiceOuterClass
+                        .HelloRequest
+                        .newBuilder()
+                        .setName("Nia")
+                        .build();
 
-        server.awaitTermination();
+        GreetingServiceOuterClass.HelloResponse response = stub.greeting(request);
+        System.out.println(response);
+
+        channel.shutdownNow();
+
     }
 }
