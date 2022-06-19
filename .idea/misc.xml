@@ -10,7 +10,6 @@
         <option value="$PROJECT_DIR$/spring-mvc-app/pom.xml" />
         <option value="$PROJECT_DIR$/spring-forms-validation/pom.xml" />
         <option value="$PROJECT_DIR$/GRPC/server/java-gRPC/pom.xml" />
-        <option value="$PROJECT_DIR$/GRPC/client/java-client-gRPC/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

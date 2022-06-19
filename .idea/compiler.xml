@@ -14,16 +14,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-crud-app" />
-        <module name="spring-forms-validation" />
         <module name="spring-rest" />
-        <module name="java-client-gRPC" />
-        <module name="spring-mvc-app" />
+      </profile>
+      <profile name="Annotation profile for spring-gRPC" enabled="true">
+        <sourceOutputDir name="../../../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="java-gRPC" />
+      </profile>
+      <profile name="Annotation profile for spring-forms-validation" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-crud-app" />
+        <module name="spring-mvc-app" />
+        <module name="spring-forms-validation" />
         <module name="spring-context" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="java-client-gRPC" target="1.7" />
       <module name="spring-keylock" target="8" />
       <module name="spring-mvc-app (1)" target="8" />
       <module name="spring-mvc-app-xml" target="8" />
